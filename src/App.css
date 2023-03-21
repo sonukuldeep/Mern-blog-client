@@ -1,0 +1,184 @@
+main {
+  padding: 10px;
+  max-width: 66%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header nav div a {
+  cursor: pointer;
+}
+
+header a.logo {
+  font-weight: bold;
+}
+
+header nav div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+div.post {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px 1px #333;
+}
+
+div.post div.texts h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+div.post div.info {
+  margin: 0;
+  color: #888;
+  font-size: .7rem;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
+  text-transform: capitalize;
+}
+
+div.post p.summary {
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+div.post .image a,
+div.texts a {
+  text-decoration: none;
+}
+
+div.post .image a img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+form.login form.registor {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px 7px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+form button {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  font-weight: bold;
+}
+
+form.register h2,
+form.login h2 {
+  text-align: center;
+}
+
+form .create-post-btn {
+  margin-top: 5px;
+}
+
+div.post-page {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+div.post-page div.edit-text {
+  display: flex;
+  justify-content: end;
+}
+
+div.post-page div.edit-text a {
+  text-decoration: none;
+  background-color: skyblue;
+  outline: 1px solid hsla(0, 0%, 20%, 0.5);
+  padding: 2px 8px;
+  box-shadow: 0 2px 8px 1px #333;
+}
+
+div.post-page h1.title {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+div.post-page .image {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+div.post-page .image img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+div.post-page sub {
+  border-bottom: 1px solid #233;
+}
+
+div.post-page sub.time {
+  border-bottom: none;
+  margin-left: 5px;
+}
+
+div.post-page p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+}
+
+div.post-page p img {
+  width: 70%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+div.post-page div ul, div.post-page div ol {
+  margin-left: 40px;
+} 
+
+button {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    max-width: 98%;
+    margin: 0 auto;
+  }
+  main div.post {
+    grid-template-columns: 1fr;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  main div.post .texts {
+    padding-left: 5px;
+    
+  }
+}

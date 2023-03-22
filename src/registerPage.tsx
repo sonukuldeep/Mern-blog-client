@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Editor from './editor'
 
 const serverUrl = "http://localhost:4000/"
 
 const RegisterPage = () => {
+    const navigate = useNavigate()
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [repeatPassword, setRepeatPassword] = useState<string | undefined>(undefined)
@@ -40,6 +42,7 @@ const RegisterPage = () => {
                 alert("Registration failed")
             } else {
                 alert("Registration successful!")
+                navigate('/login')
             }
 
             setUsername("")
@@ -49,7 +52,7 @@ const RegisterPage = () => {
 
     return (
         <form className='register' onSubmit={register}>
-            <h2>Register</h2>
+            <h2 className='heading'>Register</h2>
             <input type="text" placeholder='username' minLength={6} value={username} onChange={e => setUsername(e.target.value)} />
             <input type="password" placeholder='enter password' minLength={6} value={password} onChange={e => setPassword(e.target.value)} />
             <input type="password" placeholder='repeat password' value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} />

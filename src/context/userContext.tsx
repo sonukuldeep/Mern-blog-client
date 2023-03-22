@@ -1,10 +1,12 @@
-import { createContext, ReactNode, useContext, useEffect } from 'react'
+import { createContext, ReactNode, useContext } from 'react'
 import { useState } from 'react'
 
 type UserProps = {
     username: string;
     id: string;
     iat?: number;
+    cover?: string;
+    content?: string;
 }
 
 type ContextProps = {

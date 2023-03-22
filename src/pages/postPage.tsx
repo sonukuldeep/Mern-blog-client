@@ -25,16 +25,18 @@ const PostPage = () => {
     return (
         <>
             <div className="post-page">
-                {userInfo?.id === post.author._id ? 
-                <div className='edit-text'>
-                    <Link to={`/editPost/${id}`}>Edit this post</Link>
-                </div> 
-                : ""}
+                {userInfo?.id === post.author._id ?
+                    <div className='edit-text'>
+                        <Link to={`/editPost/${id}`}>Edit this post</Link>
+                    </div>
+                    : ""}
                 <h1 className='title'>{post.title}</h1>
                 <div className="image">
                     <img src={`${serverUrl}${post.cover}`} alt="main image" />
                 </div>
-                <sub>By {post.author.username}</sub><sub className='time'>{format(new Date(post.createdAt), 'MMM d yyy HH:mm')}</sub>
+                <div className="author_title">
+                    <Link to={`/author/${post.author._id}`}>By {post.author.username}</Link><sub className='time'>{format(new Date(post.createdAt), 'MMM d yyy HH:mm')}</sub>
+                </div>
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
         </>

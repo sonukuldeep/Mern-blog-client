@@ -92,8 +92,8 @@ form button {
   font-weight: bold;
 }
 
-form.register h2,
-form.login h2 {
+form.register h2.heading,
+form.login h2.heading {
   text-align: center;
 }
 
@@ -136,8 +136,14 @@ div.post-page .image img {
   border-radius: 8px;
 }
 
-div.post-page sub {
-  border-bottom: 1px solid #233;
+div.post-page .author_title {
+  display: flex;
+  align-items: center;
+}
+
+div.post-page a {
+  font-size: 14px;
+  padding-bottom: 2px;
 }
 
 div.post-page sub.time {
@@ -159,12 +165,44 @@ div.post-page p img {
   border-radius: 8px;
 }
 
-div.post-page div ul, div.post-page div ol {
+div.post-page div ul,
+div.post-page div ol {
   margin-left: 40px;
-} 
+}
 
 button {
   cursor: pointer;
+}
+
+div.author-wrapper {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+div.author-wrapper .author_page {
+  display: flex;
+  border-bottom: 1px solid #233;
+}
+
+div.author-wrapper .author_page .profile_image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+div.author-wrapper .author_page .profile_image img {
+  object-fit: contain;
+}
+
+div.author-wrapper .author_page h1 {
+  margin-left: 10px;
+  align-self: flex-end;
+  text-transform: uppercase;
+}
+
+div.author-wrapper .content {
+  max-width: 600px;
+  margin: 10px auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -172,13 +210,15 @@ button {
     max-width: 98%;
     margin: 0 auto;
   }
+
   main div.post {
     grid-template-columns: 1fr;
     border-radius: 8px;
     overflow: hidden;
   }
+
   main div.post .texts {
     padding-left: 5px;
-    
+
   }
 }

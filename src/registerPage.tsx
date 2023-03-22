@@ -20,11 +20,19 @@ const RegisterPage = () => {
     async function register(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         if (validateForm) {
+            const data = new FormData()
+            data.set('username', username)
+            data.set('password', password)
+            data.set('content', content)
+
+            if (imageFile) {
+                data.set('file', imageFile[0])
+            }
 
             const response = await fetch(`${serverUrl}register`, {
                 method: 'POST',
-                body: JSON.stringify({ username, password }),
-                headers: { 'Content-Type': 'application/json' },
+                body: data,
+                // headers: { 'Content-Type': 'application/json' },
             })
 
             if (response.status !== 200) {
@@ -46,10 +54,10 @@ const RegisterPage = () => {
             <input type="password" placeholder='enter password' minLength={6} value={password} onChange={e => setPassword(e.target.value)} />
             <input type="password" placeholder='repeat password' value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} />
             <sub>Upload profile pic</sub>
-            <input type="file" onChange={e=>setImageFile(e.target.files)} accept="image/png, image/webp, image/jpeg, image/avif"/>
+            <input type="file" onChange={e => setImageFile(e.target.files)} accept="image/png, image/webp, image/jpeg, image/avif" />
             <h3>Your Brief Introduction</h3>
             <Editor value={content} onChange={setContent} />
-            <button style={validateForm  ? { cursor: 'pointer' } : { cursor: 'not-allowed' }}>Register</button>
+            <button style={validateForm ? { cursor: 'pointer' } : { cursor: 'not-allowed' }}>Register</button>
         </form>
     )
 }

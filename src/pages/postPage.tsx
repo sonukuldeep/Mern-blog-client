@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom'
 import { PostProps } from '../../typings'
 import { useUserContext } from '../context/userContext'
 
-const serverUrl = "http://localhost:4000/"
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const PostPage = () => {
     const { id } = useParams()

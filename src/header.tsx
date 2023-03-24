@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useUserContext } from './context/userContext'
 
-const serverUrl = "http://localhost:4000/"
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const Header = () => {
     const { userInfo, setUserInfo } = useUserContext()

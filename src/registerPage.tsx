@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Editor from './editor'
 
-const serverUrl = "http://localhost:4000/"
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const RegisterPage = () => {
     const navigate = useNavigate()

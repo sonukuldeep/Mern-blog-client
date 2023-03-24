@@ -9,7 +9,7 @@ const CreatePost = () => {
   const [file, setFile] = useState<FileList | null>(null)
   const navigate = useNavigate()
 
-  const serverUrl = "http://localhost:4000/"
+  const serverUrl = import.meta.env.VITE_SERVER_URL
   
   async function createNewPost(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()

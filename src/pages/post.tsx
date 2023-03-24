@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
 import { PostProps } from '../../typings'
 
-const serverUrl = "http://localhost:4000/"
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const Post = ({ postData }: { postData: PostProps }) => {
     return (

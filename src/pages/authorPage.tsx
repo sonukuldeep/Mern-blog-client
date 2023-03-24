@@ -9,7 +9,7 @@ type UserProps = {
   content: string;
 }
 
-const serverUrl = "http://localhost:4000/"
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const AuthorPage = () => {
   const { id } = useParams()

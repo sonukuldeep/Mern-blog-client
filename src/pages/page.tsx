@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Post from './post'
 import { PostProps } from '../../typings'
 
-const serverUrl = "http://localhost:4000/"
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const Page = () => {
     const [posts, setPosts] = useState<PostProps[]>([])

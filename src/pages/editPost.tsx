@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { PostProps } from '../../typings'
 import Editor from '../editor'
 
-const serverUrl = "http://localhost:4000/"
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const EditPost = () => {
     const { id } = useParams()
